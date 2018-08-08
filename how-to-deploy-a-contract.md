@@ -2,11 +2,11 @@
 
 ## Quick Start
 
-A container with the dependencies set up can be found [here](https://hub.docker.com/r/ly/ContractFuzzer/deployer).
+A container with the dependencies set up can be found [here](https://pan.baidu.com/s/undefined).
 
 To open the container, install docker and run:
 ```
-docker pull ly/ContractFuzzer/deployer && docker run -i -t ly/ContractFuzzer/deployer
+docker load<contract_deployer.tar && docker run -i -t contractfuzzer/deployer
 ```
 
 To deploy the example contracts `contract_deployer/examples/` inside the container, run:
@@ -30,8 +30,8 @@ the examples directory structure
 ## Custom Docker image build
 
 ```
-docker build -t ContractFuzzer/deployer .
-docker run -it -e "ContractFuzzer=/contractFuzzer/deployer"  ContractFuzzer/deployer:latest
+docker build -f deploy.Dockerfile -t contractfuzzer/deployer .
+docker run -it -e "ContractFuzzer=/contractFuzzer/deployer"  contractfuzzer/deployer:latest
 ```
 ## Deploy Ethereum Contracts
 
@@ -60,7 +60,8 @@ cd contract_deployer&&babel-node ./utils/deploy-main.js
 Finally, you could find contract `address` in file 
 `/ContractFuzzer/contract_deployer/examples/config/xxx.json`!
 
-#Notice
+# Notice
+
 The instruction is under change. And this needs efforts to make a success.
 
-What's more, if you could deploy contracts on the private chain(upon base chain we provided `Ethereum` in the repository) in your own way, that's very nice.
+What's more, if you could deploy contracts on the private chain(upon base chain `Ethereum`  we provided in the repository) in your own way, that's very nice.

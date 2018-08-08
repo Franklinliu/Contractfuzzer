@@ -4,13 +4,19 @@ The Ethereum Smart Contract Fuzzer for Security Vulnerability Detection
 
 released under GPL v3 license.
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1341421.svg)](https://doi.org/10.5281/zenodo.1341421)
+
+
+Any questions with the tool, please contact Dr. Bo Jiang. gongbell@gmail.com
+
 ## Quick Start
 
-A container with the dependencies set up can be found [here](https://hub.docker.com/r/ly/ContractFuzzer/).
+A container with the dependencies set up can be found [here](https://pan.baidu.com/s/1NZJGY4Zks0ZulPt5QnScCA).(password:`l2ww`)
 
 To open the container, install docker and run:
 ```
-docker pull ly/ContractFuzzer && docker run -i -t ly/ContractFuzzer
+docker load<contractfuzzer.tar 
+docker run -i -t contractfuzzer/contractfuzzer:latest
 ```
 
 To evaluate the example contracts inside the container, run:
@@ -19,9 +25,9 @@ To evaluate the example contracts inside the container, run:
 cd /ContractFuzzer && ./run.sh --contracts_dir ./examples/exception_disorder
 ```
 
-and finally you will see results records file in directory '/ContractFuzzer/examples/exception_dirorder/list/reporter/'!
+and finally you will see results records file in directory  `/ContractFuzzer/examples/exception_dirorder/list/reporter/`!
 
-## Custom Docker image build
+## Custom Docker image build(verified under Ubuntu 16.04)
 
 
 ```
@@ -97,6 +103,7 @@ Some details about the repository structure as following.
 4.  `contract_tester` is one part of ContractFuzzer, which sends the contract call messages to our instrumented Geth client.
 5.  `go-ethereum-cf` is one part of ContractFuzzer, which instrumented the evm of Go-etheruem. And most codes added could be found under relative directory `core/vm`
 6.  `examples` here provides some cases for us to make sense of the tool quickly.
+7.  `base` here provides some fundamental dockerfiles. `golang, nodejs and their integreted enviroment.`
 
 ## Contributing
 
